@@ -1,9 +1,24 @@
 package Entity.Base;
 
+import gui.FieldCell;
+import logic.Player;
+
 public abstract class Skill {
-	private int prize;
+	private boolean isAlreadyUse;
 	
-	public Skill(int prize) {
-		this.prize = prize;
+	public Skill() {
+		isAlreadyUse =  false;
 	}
+
+	public boolean isAlreadyUse() {
+		return isAlreadyUse;
+	}
+
+	public void setAlreadyUse(boolean isAlreadyUse) {
+		this.isAlreadyUse = isAlreadyUse;
+	}
+	
+
+
+	public abstract void useSkill(FieldCell fieldCell, Player p1, Player p2);
 }

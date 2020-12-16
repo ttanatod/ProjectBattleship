@@ -3,9 +3,8 @@ package Entity;
 import java.util.ArrayList;
 
 import Entity.Base.BaseShip;
-import Entity.Base.hasConditionToPlacementable;
 
-public class Ship03 extends BaseShip implements hasConditionToPlacementable{
+public class Ship03 extends BaseShip{
 
 	public Ship03() {
 		super(2, 2);
@@ -23,12 +22,14 @@ public class Ship03 extends BaseShip implements hasConditionToPlacementable{
 		return true;
 	}
 
+
 	@Override
-	public boolean conditionToPlacementable() {
+	public boolean canPlace() {
 		// TODO Auto-generated method stub
 		return false;
-		//TODO parameter cell  return boolean that cell can place the ship or not
 	}
 
 
 }
+
+//TODO problem how to know long ship isAlive how to clear all cell

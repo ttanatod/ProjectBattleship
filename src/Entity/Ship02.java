@@ -3,9 +3,8 @@ package Entity;
 import java.util.ArrayList;
 
 import Entity.Base.BaseShip;
-import Entity.Base.Placementable;
 //shield
-public class Ship02 extends BaseShip implements Placementable{
+public class Ship02 extends BaseShip {
 	private boolean isShieldAlreadyUsed;
 	
 	public Ship02() {
@@ -36,9 +35,10 @@ public class Ship02 extends BaseShip implements Placementable{
 		this.isShieldAlreadyUsed = isShieldAlreadyUsed;
 	}
 
+
 	@Override
-	public boolean placement() {
+	public boolean canPlace() {
 		// TODO Auto-generated method stub
-		return true;
+		return false;
 	}
 }

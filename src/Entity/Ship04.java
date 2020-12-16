@@ -3,9 +3,8 @@ package Entity;
 import java.util.ArrayList;
 
 import Entity.Base.BaseShip;
-import Entity.Base.hasConditionToPlacementable;
 
-public class Ship04 extends BaseShip implements hasConditionToPlacementable{
+public class Ship04 extends BaseShip{
 
 	public Ship04() {
 		super(3, 3);
@@ -25,7 +24,7 @@ public class Ship04 extends BaseShip implements hasConditionToPlacementable{
 	}
 
 	@Override
-	public boolean conditionToPlacementable() {
+	public boolean canPlace() {
 		// TODO Auto-generated method stub
 		return false;
 	}

@@ -1,12 +1,11 @@
 package Entity;
 
 import Entity.Base.BaseShip;
-import Entity.Base.Placementable;
 
 import java.util.ArrayList;
 import java.util.Random;
 //evasion
-public class Ship01 extends BaseShip implements Placementable{
+public class Ship01 extends BaseShip {
 
 	public Ship01() {
 		super(1, 1); //size = 1 hp = 1
@@ -29,10 +28,11 @@ public class Ship01 extends BaseShip implements Placementable{
 	}
 
 	@Override
-	public boolean placement() {
+	public boolean canPlace() {
 		// TODO Auto-generated method stub
-		return true;
+		return false;
 	}
 
+	
 	
 }

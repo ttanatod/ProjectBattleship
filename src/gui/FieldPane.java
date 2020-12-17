@@ -45,7 +45,7 @@ public class FieldPane extends GridPane{
 	public FieldCell getNextCell(FieldCell fieldcell) {
 		FieldCell nextFieldCell = null;
 		for (int i = 0;i < fieldCells.size();i++) {
-			if(fieldCells.get(i) == fieldcell) {
+			if(fieldCells.get(i) == fieldcell && i != 63) {
 				nextFieldCell = fieldCells.get(i+1);
 				break;
 			}	
@@ -55,7 +55,7 @@ public class FieldPane extends GridPane{
 	
 	public void destroy(ArrayList<Integer> row) {
 		for (int i = 0;i < row.size();i++) {
-			fieldCells.get(i).isAttacked();
+			fieldCells.get(row.get(i)).isAttacked();
 		}
 	}
 	
@@ -75,5 +75,23 @@ public class FieldPane extends GridPane{
 			row.add(i);
 			i += 1;
 		} return row;
+	}
+	
+	public boolean isFieldPaneHasThis(FieldCell fieldCell) {
+		for (int i = 0;i < fieldCells.size();i++) {
+			if(fieldCell == fieldCells.get(i)) return true;
+		}
+		return false;
+	}
+	
+	public boolean isSameRow(FieldCell fieldCell1, FieldCell fieldcell2) {
+		int i, j;
+		for (i = 0;i < fieldCells.size();i++) {
+			if(fieldCells.get(i) == fieldCell1) break;	
+		}
+		for (j = 0;j < fieldCells.size();j++) {
+			if(fieldCells.get(j) == fieldCell1) break;	
+		}
+		return (i/8) == (j/8);
 	}
 }

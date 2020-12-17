@@ -3,8 +3,12 @@ package Entity;
 import java.util.ArrayList;
 
 import Entity.Base.BaseShip;
+import Entity.Base.Buttonable;
+import gui.FieldCell;
+import gui.FieldPane;
+import logic.GameController;
 
-public class Ship03 extends BaseShip{
+public class Ship03 extends BaseShip implements Buttonable{
 
 	public Ship03() {
 		super(2, 2);
@@ -22,12 +26,21 @@ public class Ship03 extends BaseShip{
 		return true;
 	}
 
-
 	@Override
-	public boolean canPlace() {
+	public boolean canPlace(FieldCell fieldCell) {
 		// TODO Auto-generated method stub
+		if (GameController.getFieldPane(fieldCell).getNextCell(fieldCell).getBaseShip() == null && 
+				GameController.getFieldPane(fieldCell).isSameRow(fieldCell, GameController.getFieldPane(fieldCell).getNextCell(fieldCell))) return true;
 		return false;
 	}
+
+	@Override
+	public String getTotalImageUrl() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 
 }

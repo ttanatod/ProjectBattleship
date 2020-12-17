@@ -12,13 +12,13 @@ public class Player {
 	//ArrayList<BaseShip> myShip;
 	ArrayList<Skill> mySkill;
 	FieldPane fieldPaneShip;
-	int ship;
+	int numberOfShip;
 	public Player() {
 		//myShip = new ArrayList<BaseShip>();
 		mySkill = new ArrayList<Skill>();
 		cooldown = 3;
 		fieldPaneShip = new FieldPane();
-		ship = 4;
+		numberOfShip = 8;
 	}
 
 	public int getCooldown() {
@@ -50,6 +50,6 @@ public class Player {
 	}
 	
 	public void decreaseShip() {
-		this.ship -= 1;
+		this.numberOfShip -= 1;
 	}
 }

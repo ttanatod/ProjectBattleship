@@ -2,11 +2,14 @@ package Entity.Base;
 
 import java.util.ArrayList;
 
+import gui.FieldCell;
+
 public abstract class BaseShip {
 	private int hp;
 	private int size;
 	private boolean isAlive;
 	private ArrayList<String> url;
+	private String TotalImageUrl;
 	
 	public BaseShip(int size, int hp) {
 		this.hp = hp;
@@ -35,6 +38,6 @@ public abstract class BaseShip {
 		this.url = url;
 	}
 	
-	public abstract boolean canPlace() ;
+	public abstract boolean canPlace(FieldCell fieldCell) ;
 	
 }

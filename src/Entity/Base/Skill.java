@@ -3,8 +3,9 @@ package Entity.Base;
 import gui.FieldCell;
 import logic.Player;
 
-public abstract class Skill {
+public abstract class Skill implements Buttonable {
 	private boolean isAlreadyUse;
+	private String url;
 	
 	public Skill() {
 		isAlreadyUse =  false;
@@ -18,7 +19,9 @@ public abstract class Skill {
 		this.isAlreadyUse = isAlreadyUse;
 	}
 	
-
+	public String getUrl() {
+		return this.url;
+	}
 
 	public abstract void useSkill(FieldCell fieldCell, Player p1, Player p2);
 }

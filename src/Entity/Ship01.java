@@ -1,11 +1,13 @@
 package Entity;
 
 import Entity.Base.BaseShip;
+import Entity.Base.Buttonable;
+import gui.FieldCell;
 
 import java.util.ArrayList;
 import java.util.Random;
 //evasion
-public class Ship01 extends BaseShip {
+public class Ship01 extends BaseShip implements Buttonable {
 
 	public Ship01() {
 		super(1, 1); //size = 1 hp = 1
@@ -28,10 +30,18 @@ public class Ship01 extends BaseShip {
 	}
 
 	@Override
-	public boolean canPlace() {
+	public boolean canPlace(FieldCell fieldCell) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
+
+	@Override
+	public String getTotalImageUrl() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 
 	
 	

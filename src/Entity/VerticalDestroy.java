@@ -1,11 +1,12 @@
 package Entity;
 
+import Entity.Base.Buttonable;
 import Entity.Base.Skill;
 import gui.FieldCell;
 import gui.FieldPane;
 import logic.Player;
 
-public class VerticalDestroy extends Skill{
+public class VerticalDestroy extends Skill implements Buttonable{
 
 	public VerticalDestroy() {
 		super();
@@ -17,5 +18,13 @@ public class VerticalDestroy extends Skill{
 		p1.setMaxCooldown();
 		p2.getFieldPane().destroy(p2.getFieldPane().getCol(fieldCell)); 
 	}
+
+	@Override
+	public String getTotalImageUrl() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
 	
 }

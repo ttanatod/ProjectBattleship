@@ -3,8 +3,10 @@ package Entity;
 import java.util.ArrayList;
 
 import Entity.Base.BaseShip;
+import Entity.Base.Buttonable;
+import gui.FieldCell;
 //shield
-public class Ship02 extends BaseShip {
+public class Ship02 extends BaseShip implements Buttonable {
 	private boolean isShieldAlreadyUsed;
 	
 	public Ship02() {
@@ -35,10 +37,18 @@ public class Ship02 extends BaseShip {
 		this.isShieldAlreadyUsed = isShieldAlreadyUsed;
 	}
 
+	@Override
+	public boolean canPlace(FieldCell fieldCell) {
+		// TODO Auto-generated method stub
+		return true;
+	}
 
 	@Override
-	public boolean canPlace() {
+	public String getTotalImageUrl() {
 		// TODO Auto-generated method stub
-		return false;
+		return null;
 	}
+
+
+
 }

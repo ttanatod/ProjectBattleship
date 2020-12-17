@@ -10,12 +10,14 @@ public abstract class BaseShip {
 	private boolean isAlive;
 	private ArrayList<String> url;
 	private String TotalImageUrl;
+	private int inStock;
 	
 	public BaseShip(int size, int hp) {
 		this.hp = hp;
 		this.size = size;
 		url = new ArrayList<String>();
 		isAlive = true;
+		inStock = 2;
 	}
 	
 	public abstract boolean isAttacked(); 
@@ -38,6 +40,14 @@ public abstract class BaseShip {
 		this.url = url;
 	}
 	
+	public void decreaseInStock() {
+		this.inStock -= 1;
+	}
+	
+	public int getInStock() {
+		return inStock;
+	}
+
 	public abstract boolean canPlace(FieldCell fieldCell) ;
 	
 }

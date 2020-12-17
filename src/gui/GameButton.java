@@ -154,7 +154,7 @@ public class GameButton extends Button {
 	
 	
 
-	public Buttonable getButtoneShip() {
+	public Buttonable getButtonContent() {
 		return buttonContent;
 	}
 }

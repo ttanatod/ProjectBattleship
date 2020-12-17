@@ -63,13 +63,14 @@ public class FieldCell extends Pane{
 		 * attack_phase: click to attack
 		 * 
 		 * */
-		if (GameController.getGamePhase() == "Preparation") {
+		if (GameController.getGamePhase() == "Preparation") { //prepare phase
 			BaseShip ship = GameController.getSelectedShip();
 			
 			if(this.baseShip == null && ship.canPlace(this)) {
 				this.baseShip = ship;
 				Image image = new Image(ship.getUrl().get(0));
-				setBackgroundShip(image);	
+				setBackgroundShip(image);
+				GameController.getAtkPlayer().decreaseInStock(ship);			
 			}
 		} else { //play phase
 			this.isAttacked();

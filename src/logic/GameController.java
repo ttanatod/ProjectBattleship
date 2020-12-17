@@ -3,6 +3,7 @@ package logic;
 import Entity.Base.BaseShip;
 import gui.FieldCell;
 import gui.FieldPane;
+import gui.GameButton;
 import logic.Player;
 
 public class GameController {
@@ -18,7 +19,8 @@ public class GameController {
 	private static Player atkPlayer;
 	private static Player defPlayer;
 	
-	
+		
+	private static GameButton selectedGameButton;
 	private static BaseShip selectedShip;
 	
 	public GameController() {
@@ -42,6 +44,16 @@ public class GameController {
 		return gamePhase;
 	}
 	
+	
+	
+	public static GameButton getSelectedGameButton() {
+		return selectedGameButton;
+	}
+
+	public static void setSelectedGameButton(GameButton selectedGameButton) {
+		GameController.selectedGameButton = selectedGameButton;
+	}
+
 	public static BaseShip getSelectedShip() {
 		return selectedShip;
 	}
@@ -64,4 +76,14 @@ public class GameController {
 			defPlayer = player2;
 		}
 	}
+
+	public static Player getAtkPlayer() {
+		return atkPlayer;
+	}
+
+	public static Player getDefPlayer() {
+		return defPlayer;
+	}
+	
+	
 }
